@@ -16,8 +16,7 @@ h2,
 h3,
 h4,
 h5,
-h6,
-p {
+h6 {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
@@ -28,6 +27,7 @@ p {
   outline: none; }
 
 a {
+  outline: none;
   text-decoration: none;
   color: #0075ff; }
 
@@ -38,6 +38,8 @@ strong {
   position: relative;
   height: 700px;
   padding: 24px 120px 48px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -82,9 +84,17 @@ strong {
   .header__phone, .header__link {
     color: #fff; }
   .header__burger {
-    display: none; }
+    display: none;
+    position: absolute;
+    top: 42px;
+    right: 23px;
+    z-index: 2; }
   .header__toggler {
     display: none; }
+    .header__toggler:checked ~ .nav {
+      display: block; }
+    .header__toggler:checked + .header__burger::before {
+      content: "\2715"; }
   .header__logo {
     height: 76px;
     width: 115px;
@@ -115,14 +125,51 @@ strong {
 @media (max-width: 960px) {
   .header {
     padding: 24px 20px 80px; }
+    .header__top {
+      width: calc(50% + 115px * 0.63 / 2); }
+    .header__logo {
+      width: 69px;
+      height: 45.6px;
+      z-index: 2; }
     .header__title {
-      bottom: 80px; }
+      bottom: 80px;
+      font-size: 46px; }
     .header__phone, .header__action {
       display: none; }
     .header__burger {
       display: block; }
+      .header__burger::before {
+        content: "\2630";
+        height: 12px;
+        width: 18px;
+        color: white;
+        font-size: 24px; }
     .header__phone-icon {
-      display: block; } }
+      display: block; }
+    .header__nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 700px;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      padding: 120px 0;
+      background-color: #0075ff; }
+      .header__nav > .nav__list {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+        height: 100%;
+        font-size: 22px;
+        line-height: 1;
+        font-weight: bold; } }
 
 .nav {
   color: white;
