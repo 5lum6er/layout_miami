@@ -71,7 +71,14 @@ strong {
     background-image: url(../images/Phone.png);
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat; }
+    background-repeat: no-repeat;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s; }
+    .header__phone-icon:hover {
+      -webkit-transform: scale(1.2);
+              transform: scale(1.2); }
   .header__phone, .header__action {
     font-size: 12px;
     font-weight: bold;
@@ -81,8 +88,12 @@ strong {
   .header__action {
     border-bottom: 1px solid #fff;
     padding: 8px 0; }
-  .header__phone, .header__link {
-    color: #fff; }
+  .header__phone-link, .header__link {
+    color: #fff;
+    -webkit-transition: opacity 250ms;
+    transition: opacity 250ms; }
+    .header__phone-link:hover, .header__link:hover {
+      opacity: 0.5; }
   .header__burger {
     display: none;
     position: absolute;
@@ -92,7 +103,8 @@ strong {
   .header__toggler {
     display: none; }
     .header__toggler:checked ~ .nav {
-      display: block; }
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%); }
     .header__toggler:checked + .header__burger::before {
       content: "\2715"; }
   .header__logo {
@@ -149,12 +161,14 @@ strong {
     .header__nav {
       position: absolute;
       top: 0;
-      left: 0;
+      left: 100%;
       right: 0;
       height: 700px;
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       padding: 120px 0;
+      -webkit-transition: 1.2s;
+      transition: 1.2s;
       background-color: #0075ff; }
       .header__nav > .nav__list {
         display: -webkit-box;
@@ -196,11 +210,11 @@ strong {
   .nav__link {
     color: white;
     font-size: 12px;
-    line-height: 16px; }
-
-@media (max-width: 960px) {
-  .nav {
-    display: none; } }
+    line-height: 16px;
+    -webkit-transition: opacity 250ms;
+    transition: opacity 250ms; }
+    .nav__link:hover {
+      opacity: 0.5; }
 
 .section {
   position: relative;
@@ -286,7 +300,14 @@ strong {
        object-fit: cover;
     -o-object-position: center;
        object-position: center;
-    border-radius: 8px; }
+    border-radius: 8px;
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
+    transition: transform 0.2s, -webkit-transform 0.2s; }
+    .pictures__img:hover {
+      -webkit-transform: scale(1.05);
+              transform: scale(1.05); }
   .pictures--wide-left > .pictures__img:first-child {
     width: calc(67% - 10px); }
   .pictures--wide-left > .pictures__img:last-child {
@@ -309,7 +330,11 @@ strong {
   line-height: 27px;
   margin: 24px 0 40px; }
   .gallery__caption > a {
-    font-weight: bold; }
+    font-weight: bold;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s; }
+    .gallery__caption > a:hover {
+      color: #5ba1cf; }
 
 .gallery__button {
   margin: 44px auto 100px; }
@@ -325,14 +350,26 @@ strong {
   font-size: 16px;
   font-weight: bold;
   line-height: 14px;
-  color: white;
-  background-color: #0075ff;
   cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s; }
-  .button:hover {
+  -webkit-transition: background-color 1s, color 1s, -webkit-transform 0.3s;
+  transition: background-color 1s, color 1s, -webkit-transform 0.3s;
+  transition: background-color 1s, color 1s, transform 0.3s;
+  transition: background-color 1s, color 1s, transform 0.3s, -webkit-transform 0.3s; }
+  .button--primary {
+    background-color: #0075ff;
+    color: white; }
+    .button--primary:hover {
+      background-color: white;
+      color: #0075ff; }
+  .button--secondary {
     background-color: white;
     color: #0075ff; }
+    .button--secondary:hover {
+      background-color: #0075ff;
+      color: white; }
+  .button:active {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9); }
 
 .consultation {
   display: -webkit-box;
@@ -378,6 +415,9 @@ strong {
     margin-bottom: 16px; }
   .form__input {
     width: calc(100% - 36px); }
+    .form__input:focus {
+      -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
   .form__button {
     margin-top: 16px; }
 
