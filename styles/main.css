@@ -167,8 +167,8 @@ strong {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       padding: 120px 0;
-      -webkit-transition: 1.2s;
-      transition: 1.2s;
+      -webkit-transition: 0.3s;
+      transition: 0.3s;
       background-color: #0075ff; }
       .header__nav > .nav__list {
         display: -webkit-box;
@@ -187,7 +187,10 @@ strong {
 
 .nav {
   color: white;
-  width: 100%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
   letter-spacing: 2px;
   text-transform: uppercase; }
   .nav__list {
@@ -356,10 +359,10 @@ strong {
   font-weight: bold;
   line-height: 14px;
   cursor: pointer;
-  -webkit-transition: background-color 1s, color 1s, -webkit-transform 0.3s;
-  transition: background-color 1s, color 1s, -webkit-transform 0.3s;
-  transition: background-color 1s, color 1s, transform 0.3s;
-  transition: background-color 1s, color 1s, transform 0.3s, -webkit-transform 0.3s; }
+  -webkit-transition: background-color 300ms, color 300ms, -webkit-transform 0.3s;
+  transition: background-color 300ms, color 300ms, -webkit-transform 0.3s;
+  transition: background-color 300ms, color 300ms, transform 0.3s;
+  transition: background-color 300ms, color 300ms, transform 0.3s, -webkit-transform 0.3s; }
   .button--primary {
     background-color: #0075ff;
     color: white; }
@@ -508,6 +511,12 @@ strong {
     font-size: 14px;
     color: #9fadc2;
     margin-bottom: 8px; }
+  .contact__link {
+    color: #000;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s; }
+    .contact__link:hover {
+      color: #0075ff; }
 
 @media (max-width: 960px) {
   .contact {
@@ -537,6 +546,9 @@ strong {
     margin: auto;
     width: 115px;
     height: 76px; }
+
+html {
+  scroll-behavior: smooth; }
 
 body {
   background: #eee; }
