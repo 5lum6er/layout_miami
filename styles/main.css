@@ -247,6 +247,11 @@ strong {
     font-weight: bold;
     line-height: 1;
     letter-spacing: -1.5px; }
+  .info__link {
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s; }
+    .info__link:hover {
+      color: #5ba1cf; }
   .info__text {
     max-width: 564px; }
     .info__text > p {
